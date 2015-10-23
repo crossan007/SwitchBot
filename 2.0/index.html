@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>FCC Sound Controller</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+        .btn-primary {
+        color: #fff;
+        background-color: #FF0000;
+        border-color: #2e6da4;
+        }
+        .btn-primary.active {
+            color: #FFF;
+            background-color: #00FF00;
+            border-color: #204d74;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li class="active" ><a data-toggle="pill" href="#presets">System Presets</a></li>
+                    <li ><a data-toggle="pill" href="#components">Component Controls</a></li>
+                    <li ><a data-toggle="pill" href="#settings">Settings</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">FCC Sound Controller</h3>
+        </div>
+ 
+        <div class="tab-content">
+            <div id="presets" class="tab-pane fade in active">
+                <h3>System Presets</h3>
+                <p class="lead"></p>
+                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Off</a></p>
+                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Worship Practice / Warm Up</a></p>
+                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Watch a DVD</a></p>
+                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sunday Service</a></p>
+                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Guest Speaker</a></p>
+            </div>
+            <div id="components" class="tab-pane fade">
+                <h3>Component Controls</h3>
+                <h4>Projector Controls</h4>
+                <div class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-primary active">
+                        <input type="radio" name="Projector" id="option1" autocomplete="off" checked> VGA
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="radio" name="Projector" id="option2" autocomplete="off"> DVD
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="radio" name="Projector" id="option3" autocomplete="off"> Blank
+                      </label>
+                </div> 
+                <div class="btn-group" data-toggle="buttons">     
+                      <label class="btn btn-primary active">
+                        <input type="radio" name="ProjectorFrz" id="option1" autocomplete="off" checked> Frozen
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="radio" name="ProjectorFrz" id="option2" autocomplete="off"> UnFrozen
+                      </label>
+                    
+                      
+                      
+                </div>
+                <p>
+                
+                <div class="btn-group" data-toggle="buttons">
+                <h4>Lighting Controls</h4>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Lighting" autocomplete="off"> Stage Lights
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Lighting" autocomplete="off"> Booth Lights
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Lighting" autocomplete="off"> House Lights
+                      </label>
+                </div>
+                <p>
+                <div class="btn-group" data-toggle="buttons">
+                <h4>Amplifiers (Audio Zones)</h4>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Amplifiers" autocomplete="off"> House Speakers
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Amplifiers" autocomplete="off"> Nursery Speaker
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Amplifiers" autocomplete="off"> Stage Monitors
+                      </label>
+                </div>  
+                <p>
+                <div class="btn-group" data-toggle="buttons">
+                <h4>Climate</h4>
+                      <label class="btn btn-primary">
+                        <input type="checkbox" name="Climate" autocomplete="off"> Stage Fans
+                      </label>
+                </div>
+             
+            </div>
+            <div id="settings" class="tab-pane fade">
+                <h3>Settings</h3>
+             
+            </div>
+            
+        </div>
+
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
