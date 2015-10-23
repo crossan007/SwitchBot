@@ -2,7 +2,7 @@
 <html lang="en">
  
 <head>
-    <title>FCC Sound Controller</title>
+    <title>FCC Systems Controller</title>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -30,19 +30,39 @@
                     <li ><a data-toggle="pill" href="#settings">Settings</a></li>
                 </ul>
             </nav>
-            <h3 class="text-muted">FCC Sound Controller</h3>
+            <h3 class="text-muted">FCC Systems Controller</h3>
         </div>
  
         <div class="tab-content">
             <div id="presets" class="tab-pane fade in active">
                 <h3>System Presets</h3>
                 <p class="lead"></p>
-                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Off</a></p>
+                <p><a class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirm-shutdown" role="button">Off</a></p>
                 <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Worship Practice / Warm Up</a></p>
                 <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Watch a DVD</a></p>
                 <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sunday Service</a></p>
                 <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Guest Speaker</a></p>
             </div>
+            
+            <div class="modal modal-transparent fade" id="confirm-shutdown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Confirm System Shutdown</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Yes, Shut everything off</a></p>
+                <p><a class="btn btn-lg btn-success" data-dismiss="modal">No, Keep on jammin!</a></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
             <div id="components" class="tab-pane fade">
                 <h3>Component Controls</h3>
                 <h4>Projector Controls</h4>
@@ -58,11 +78,11 @@
                       </label>
                 </div> 
                 <div class="btn-group" data-toggle="buttons">     
-                      <label class="btn btn-primary active">
-                        <input type="radio" name="ProjectorFrz" id="option1" autocomplete="off" checked> Frozen
-                      </label>
                       <label class="btn btn-primary">
-                        <input type="radio" name="ProjectorFrz" id="option2" autocomplete="off"> UnFrozen
+                        <input type="radio" name="ProjectorFrz" id="option1" autocomplete="off" > Frozen
+                      </label>
+                      <label class="btn btn-primary active">
+                        <input type="radio" name="ProjectorFrz" id="option2" autocomplete="off" checked> UnFrozen
                       </label>
                     
                       
@@ -109,6 +129,21 @@
              
             </div>
             
+        </div>
+        
+        <hr>
+        
+        <div>
+        <h4>Recording Controls</h4>
+                <div class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-primary active">
+                        <input type="radio" name="Projector" id="option1" autocomplete="off" checked> Recording Stopped
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="radio" name="Projector" id="option2" autocomplete="off"> Recording Started
+                      </label>
+                </div> 
+        
         </div>
 
         <footer class="footer">
