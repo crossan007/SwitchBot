@@ -7,6 +7,7 @@
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="static/javascript.js"></script>
     <style>
         .btn-primary {
         color: #fff;
@@ -38,10 +39,10 @@
                 <h3>System Presets</h3>
                 <p class="lead"></p>
                 <p><a class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirm-shutdown" role="button">Off</a></p>
-                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Worship Practice / Warm Up</a></p>
-                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Watch a DVD</a></p>
-                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sunday Service</a></p>
-                <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Guest Speaker</a></p>
+                <p><a class="btn btn-lg btn-success presetButton" href="#" id="practice" role="button">Worship Practice / Warm Up</a></p>
+                <p><a class="btn btn-lg btn-success presetButton" href="#" id="dvd" role="button">Watch a DVD</a></p>
+                <p><a class="btn btn-lg btn-success presetButton" href="#" id="sundayservice" role="button">Sunday Service</a></p>
+                <p><a class="btn btn-lg btn-success presetButton" href="#" id="speaker" role="button">Guest Speaker</a></p>
             </div>
             
             <div class="modal modal-transparent fade" id="confirm-shutdown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -52,7 +53,7 @@
                     <h4 class="modal-title" id="myModalLabel">Confirm System Shutdown</h4>
                   </div>
                   <div class="modal-body">
-                    <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Yes, Shut everything off</a></p>
+                    <p><a class="btn btn-lg btn-success presetButton" id="off" role="button" data-dismiss="modal">Yes, Shut everything off</a></p>
                 <p><a class="btn btn-lg btn-success" data-dismiss="modal">No, Keep on jammin!</a></p>
                   </div>
                   <div class="modal-footer">
@@ -67,13 +68,13 @@
                 <h3>Component Controls</h3>
                 <h4>Projector Controls</h4>
                 <div class="btn-group" data-toggle="buttons">
-                      <label class="btn btn-primary active">
+                      <label class="btn btn-primary active controlButton" id="vga" data-controlGroup="projector">
                         <input type="radio" name="Projector" id="option1" autocomplete="off" checked> VGA
                       </label>
-                      <label class="btn btn-primary">
+                      <label class="btn btn-primary controlButton" id="DVD" data-controlGroup="projector">
                         <input type="radio" name="Projector" id="option2" autocomplete="off"> DVD
                       </label>
-                      <label class="btn btn-primary">
+                      <label class="btn btn-primary controlButton" id="Blank" data-controlGroup="projector">
                         <input type="radio" name="Projector" id="option3" autocomplete="off"> Blank
                       </label>
                 </div> 
