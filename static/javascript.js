@@ -11,12 +11,23 @@ $(function() {
                 console.log(error);
             }
         });
+        this.blur();
     });
     
     $('.controlButton').click(function() {
+        if($(this).data('toggleid')){
+         toggleid= $(this).data('toggleid')
+         val=$("#"+toggleid).prop('checked');
+         postdata={controlObject:$(this).data('controlobject'),controlProperties:$(this).data('controlproperties')+val};
+         alert (toggleid  +": "+ val);     
+         alert (postdata)
+        }
+        else{
+           postdata={controlObject:$(this).data('controlobject'),controlProperties:$(this).data('controlproperties')};
+        }
           $.ajax({
             url: '/api/setcontrol',
-            data: {controlGroup:$(this).data('controlGroup'),controlName:this.id},
+            data: postdata,
             type: 'POST',
             success: function(response) {
                 console.log(response);
@@ -25,6 +36,7 @@ $(function() {
                 console.log(error);
             }
         });
+        $(this).blur();
     });
     
 });

@@ -68,21 +68,21 @@
                 <h3>Component Controls</h3>
                 <h4>Projector Controls</h4>
                 <div class="btn-group" data-toggle="buttons">
-                      <label class="btn btn-primary active controlButton" id="vga" data-controlGroup="projector">
+                      <label class="btn btn-primary active controlButton" data-controlProperties="vga" data-controlObject="projector1">
                         <input type="radio" name="Projector" id="option1" autocomplete="off" checked> VGA
                       </label>
-                      <label class="btn btn-primary controlButton" id="DVD" data-controlGroup="projector">
+                      <label class="btn btn-primary controlButton" data-controlProperties="DVD" data-controlObject="projector1">
                         <input type="radio" name="Projector" id="option2" autocomplete="off"> DVD
                       </label>
-                      <label class="btn btn-primary controlButton" id="Blank" data-controlGroup="projector">
+                      <label class="btn btn-primary controlButton" data-controlProperties="Blank" data-controlObject="projector1">
                         <input type="radio" name="Projector" id="option3" autocomplete="off"> Blank
                       </label>
                 </div> 
                 <div class="btn-group" data-toggle="buttons">     
-                      <label class="btn btn-primary">
+                      <label class="btn btn-primary controlButton" data-controlProperties="Frozen" data-controlObject="projector1">
                         <input type="radio" name="ProjectorFrz" id="option1" autocomplete="off" > Frozen
                       </label>
-                      <label class="btn btn-primary active">
+                      <label class="btn btn-primary active controlButton" data-controlProperties="Unfrozen" data-controlObject="projector1">
                         <input type="radio" name="ProjectorFrz" id="option2" autocomplete="off" checked> UnFrozen
                       </label>
                     
@@ -93,8 +93,8 @@
                 
                 <div class="btn-group" data-toggle="buttons">
                 <h4>Lighting Controls</h4>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Lighting" autocomplete="off"> Stage Lights
+                      <label class="btn btn-primary" data-controlProperties="stageLights" data-controlObject="Lighting" data-toggleid="stagelights">
+                        <input type="checkbox" name="Lighting" id="stagelights"  class="controlButton" autocomplete="off"> Stage Lights
                       </label>
                       <label class="btn btn-primary">
                         <input type="checkbox" name="Lighting" autocomplete="off"> Booth Lights

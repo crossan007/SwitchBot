@@ -29,9 +29,9 @@ def preset():
     
 @app.route('/api/setcontrol',methods=['POST'])
 def control():
-    controlName = request.form['controlName']
-    controlGroup = request.form['controlGroup']
-    return "Setting Control: %s " % controlName
+    controlObject = request.form['controlObject']
+    controlProperties = request.form['controlProperties']
+    return "Setting Control: %s " % controlObject
     
 
     
