@@ -11,4 +11,4 @@ SwitchBot is currently capable of controlling the following devices.
 ###Power Switches
 *[Digital Loggers Inc, Web Power Switch 7](http://www.digital-loggers.com/lpc.html)
 ###Projectors
-*[Panasonic PT-LB60/LB55/LB50](ftp://ftp.panasonic.com/pub/panasonic/drivers/pbts/manuals/OM_PT-LB60.55.50.232C.pdf)
+*Panasonic PT-LB60/LB55/LB50 - ftp://ftp.panasonic.com/pub/panasonic/drivers/pbts/manuals/OM_PT-LB60.55.50.232C.pdf
