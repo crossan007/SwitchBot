@@ -1,0 +1,15 @@
+<h4>{{ControlObject.ControlObjectName}}</h4>
+{% for ControlObjectProperty in ControlObject.ControlObjectProperties %}
+
+    {% if ControlObjectProperty.ControlObjectPropertyType == "MultiChoice" %}
+        <div class="btn-group" data-toggle="buttons" style="text-align:center;background-color:#AAAAAA;padding:3px;color:#FFFFFF">
+        <h5>{{ControlObjectProperty.ControlObjectPropertyName}}</h5>
+            {% for ControlObjectPropertyOption in ControlObjectProperty.ControlObjectPropertyOptions %}
+            <label class="btn btn-primary active controlButton" data-controlProperties="{{ControlObjectPropertyOption}}" data-controlObject="{{ControlObject.ControlObjectName}}">
+            <input type="radio" name="{{ControlObject.ControlObjectName}}" id="{{ControlObjectPropertyOption}}" autocomplete="off" checked> {{ControlObjectPropertyOption}}</label>
+        {% endfor %}
+        </div>
+    {% endif %}
+    
+    
+{% endfor %}

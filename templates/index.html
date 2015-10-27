@@ -36,94 +36,17 @@
  
         <div class="tab-content">
             <div id="presets" class="tab-pane fade in active">
-                <h3>System Presets</h3>
-                <p class="lead"></p>
-                <p><a class="btn btn-lg btn-success" data-toggle="modal" data-target="#confirm-shutdown" role="button">Off</a></p>
-                <p><a class="btn btn-lg btn-success presetButton" href="#" id="practice" role="button">Worship Practice / Warm Up</a></p>
-                <p><a class="btn btn-lg btn-success presetButton" href="#" id="dvd" role="button">Watch a DVD</a></p>
-                <p><a class="btn btn-lg btn-success presetButton" href="#" id="sundayservice" role="button">Sunday Service</a></p>
-                <p><a class="btn btn-lg btn-success presetButton" href="#" id="speaker" role="button">Guest Speaker</a></p>
+               {% include "Presets.html" %}
             </div>
             
-            <div class="modal modal-transparent fade" id="confirm-shutdown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Confirm System Shutdown</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p><a class="btn btn-lg btn-success presetButton" id="off" role="button" data-dismiss="modal">Yes, Shut everything off</a></p>
-                <p><a class="btn btn-lg btn-success" data-dismiss="modal">No, Keep on jammin!</a></p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% include "ConfirmShutdown.html" %}
             
             
             <div id="components" class="tab-pane fade">
                 <h3>Component Controls</h3>
-                <h4>Projector Controls</h4>
-                <div class="btn-group" data-toggle="buttons">
-                      <label class="btn btn-primary active controlButton" data-controlProperties="vga" data-controlObject="projector1">
-                        <input type="radio" name="Projector" id="option1" autocomplete="off" checked> VGA
-                      </label>
-                      <label class="btn btn-primary controlButton" data-controlProperties="DVD" data-controlObject="projector1">
-                        <input type="radio" name="Projector" id="option2" autocomplete="off"> DVD
-                      </label>
-                      <label class="btn btn-primary controlButton" data-controlProperties="Blank" data-controlObject="projector1">
-                        <input type="radio" name="Projector" id="option3" autocomplete="off"> Blank
-                      </label>
-                </div> 
-                <div class="btn-group" data-toggle="buttons">     
-                      <label class="btn btn-primary controlButton" data-controlProperties="Frozen" data-controlObject="projector1">
-                        <input type="radio" name="ProjectorFrz" id="option1" autocomplete="off" > Frozen
-                      </label>
-                      <label class="btn btn-primary active controlButton" data-controlProperties="Unfrozen" data-controlObject="projector1">
-                        <input type="radio" name="ProjectorFrz" id="option2" autocomplete="off" checked> UnFrozen
-                      </label>
-                    
-                      
-                      
-                </div>
-                <p>
-                
-                <div class="btn-group" data-toggle="buttons">
-                <h4>Lighting Controls</h4>
-                      <label class="btn btn-primary" data-controlProperties="stageLights" data-controlObject="Lighting" data-toggleid="stagelights">
-                        <input type="checkbox" name="Lighting" id="stagelights"  class="controlButton" autocomplete="off"> Stage Lights
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Lighting" autocomplete="off"> Booth Lights
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Lighting" autocomplete="off"> House Lights
-                      </label>
-                </div>
-                <p>
-                <div class="btn-group" data-toggle="buttons">
-                <h4>Amplifiers (Audio Zones)</h4>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Amplifiers" autocomplete="off"> House Speakers
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Amplifiers" autocomplete="off"> Nursery Speaker
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Amplifiers" autocomplete="off"> Stage Monitors
-                      </label>
-                </div>  
-                <p>
-                <div class="btn-group" data-toggle="buttons">
-                <h4>Climate</h4>
-                      <label class="btn btn-primary">
-                        <input type="checkbox" name="Climate" autocomplete="off"> Stage Fans
-                      </label>
-                </div>
-             
+                {% for ControlObject in ControlObjects %}
+                    {% include "ControlObject.html" %}
+                {% endfor %}
             </div>
             <div id="settings" class="tab-pane fade">
                 <h3>Settings</h3>
@@ -148,7 +71,7 @@
         </div>
 
         <footer class="footer">
-            <p>&copy; Company 2015</p>
+            <p>This open source software availabile  on <a href="https://github.com/crossan007/SwitchBot">GitHub</a></p>
         </footer>
  
     </div>

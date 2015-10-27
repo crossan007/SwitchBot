@@ -14,9 +14,27 @@ app = Flask(__name__)
 #mysql.init_app(app)
 
 
+ControlObjects = [
+{
+'ControlObjectName' : 'ProjectorControls',
+'ControlObjectClassGUID' : 'f6dfc3cb-1456-4e1c-8766-97c9a3275741',
+'ControlObjectProperties' : [
+{
+'ControlObjectPropertyName' : 'Input',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'VGA','DVD','Blank'}
+},
+{
+'ControlObjectPropertyName' : 'Freeze',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'Frozen','Unfrozen'}
+}
+]}]
+
+
 @app.route('/')
 def main():
-    return render_template('index.html')
+    return render_template('index.html',ControlObjects=ControlObjects)
 
 @app.route('/api/presets/setactivepreset',methods=['POST'])
 def setActivePreset():
