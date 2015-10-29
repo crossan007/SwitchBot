@@ -4,16 +4,8 @@ from werkzeug import generate_password_hash, check_password_hash
 import imp
 import os
 
-
-#mysql = MySQL()
 app = Flask(__name__)
 
-# MySQL configurations
-#app.config['MYSQL_DATABASE_USER'] = ''
-#app.config['MYSQL_DATABASE_PASSWORD'] = ''
-#app.config['MYSQL_DATABASE_DB'] = ''
-#app.config['MYSQL_DATABASE_HOST'] = ''
-#mysql.init_app(app)
 
 
 ControlObjects = [
@@ -31,9 +23,60 @@ ControlObjects = [
 'ControlObjectPropertyType' : 'MultiChoice',
 'ControlObjectPropertyOptions' : {'Frozen','Unfrozen'}
 }
-]}]
+]},
+{
+'ControlObjectName' : 'Front of House Controls',
+'ControlObjectClassGUID' : 'asdfasdfasdf',
+'ControlObjectProperties' : [
+{
+'ControlObjectPropertyName' : 'Stage Lights',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+},
+{
+'ControlObjectPropertyName' : 'Booth Lights',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+},
+{
+'ControlObjectPropertyName' : 'House Lights',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+}
+]},
+{
+'ControlObjectName' : 'Speaker Controls',
+'ControlObjectClassGUID' : 'asdfasdfasdf',
+'ControlObjectProperties' : [
+{
+'ControlObjectPropertyName' : 'Mains',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+},
+{
+'ControlObjectPropertyName' : 'Nursery Speakers',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+},
+{
+'ControlObjectPropertyName' : 'Stage Monitors',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+}
+]},
+{
+'ControlObjectName' : 'Climage',
+'ControlObjectClassGUID' : 'asdfasdfasdf',
+'ControlObjectProperties' : [
+{
+'ControlObjectPropertyName' : 'Fans',
+'ControlObjectPropertyType' : 'MultiChoice',
+'ControlObjectPropertyOptions' : {'On','Off'}
+}
+]}
+]
 
-
+#Load plugins per https://lkubuntu.wordpress.com/2012/10/02/writing-a-python-plugin-api/
 PluginFolder = "./plugins"
 MainModule = "__init__"
 
