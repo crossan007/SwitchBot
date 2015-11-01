@@ -1,4 +1,4 @@
-def run():
+def run(self):
     print("Hello from a plugin!")
     
     

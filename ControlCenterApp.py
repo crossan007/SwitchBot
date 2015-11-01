@@ -120,7 +120,13 @@ def control():
 for i in getPlugins():
     print("Loading plugin " + i["name"])
     plugin = loadPlugin(i)
-    plugin.run()
+    plugin.run(plugin)
+    functions = dir(plugin)
+    for fName in functions:
+        f=getattr(plugin,fName)
+        if(hasattr(f,"visible")):
+            print (fName)
+    
     print(plugin.getControlObjectClassGUID())
     print(plugin.getControlObjectProperties())
     

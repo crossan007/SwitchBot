@@ -1,7 +1,8 @@
 import socket
 
-def run():
-    print("Hello from a plugin!")
+def run(self):
+    print("Hello from the projector plugin!")
+    self.GetProjector.visible='yes'
     
 def getControlObjectClassGUID():
     return "f6dfc3cb-1456-4e1c-8766-97c9a3275741"
@@ -50,6 +51,6 @@ def GetProjectoInputSource(IP):
     """
     Gets the projectors reported bulb hours
     returns an integer
-    GetProjectorBulbHours("192.168.10.55")
+    GetProjectoInputSource("192.168.10.55")
     """
-    return string(GetProjector(IP,"QIN"))
+    return GetProjector(IP,"QIN")
