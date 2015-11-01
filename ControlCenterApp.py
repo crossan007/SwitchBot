@@ -3,10 +3,10 @@ from flask_mysqldb import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 import imp
 import os
+import ssl
+import db
 
 app = Flask(__name__)
-
-
 
 ControlObjects = [
 {
@@ -93,6 +93,17 @@ def getPlugins():
 
 def loadPlugin(plugin):
     return imp.load_module(MainModule, *plugin["info"])
+    
+def initializePlugins():
+    for i in getPlugins():
+        print("Loading plugin " + i["name"])
+        plugin = loadPlugin(i)
+        plugin.run(plugin)
+        functions = dir(plugin)
+        for fName in functions:
+            f=getattr(plugin,fName)
+            if(hasattr(f,"visible")):
+                print ("Found Control Function: ",fName)
 
 
 
@@ -115,21 +126,11 @@ def control():
     controlProperties = request.form['controlProperties']
     return "Setting Control: %s " % controlObject
     
-
-    
-for i in getPlugins():
-    print("Loading plugin " + i["name"])
-    plugin = loadPlugin(i)
-    plugin.run(plugin)
-    functions = dir(plugin)
-    for fName in functions:
-        f=getattr(plugin,fName)
-        if(hasattr(f,"visible")):
-            print (fName)
-    
-    print(plugin.getControlObjectClassGUID())
-    print(plugin.getControlObjectProperties())
+print (type(db.engine))
+initializePlugins()
     
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=5002)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    context.load_cert_chain('/etc/ssl/certs/ssl-cert-snakeoil.pem','/etc/ssl/private/ssl-cert-snakeoil.key')
+    app.run(host='0.0.0.0',port=5002,ssl_context=context)
     

@@ -1,5 +1,5 @@
 def run(self):
-    print("Hello from a plugin!")
+    print("Hello from the Web Power Switch Plugin!")
     
     
 def getControlObjectClassGUID():
