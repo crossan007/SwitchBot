@@ -39,4 +39,20 @@ $(function() {
         $(this).blur();
     });
     
+    $('.finishSetup').click(function() {
+          $.ajax({
+            url: '/api/finishSetup',
+            data: {username:$("#username").val(),password:$("#password").val()},
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+                window.location.href = response;
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+        this.blur();
+    });
+    
 });

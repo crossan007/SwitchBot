@@ -30,11 +30,16 @@ class SwitchBotSettingsRegistry(Base):
     settingName=Column(String(250),nullable=False)
     settingValue=Column(String(250),nullable=False)
  
- 
-# Create an engine that stores data in the local directory's
-# sqlalchemy_example.db file.
-engine = create_engine('sqlite:///SwitchBot.db')
- 
-# Create all tables in the engine. This is equivalent to "Create Table"
-# statements in raw SQL.
-Base.metadata.create_all(engine)
+def getEngine():
+    """
+    Create an engine that stores data in the local directory's
+    # sqlalchemy_example.db file.
+    """
+    engine = create_engine('sqlite:///SwitchBot.db')
+    return engine
+def buildSchema(engine):
+    """
+    Create all tables in the engine. This is equivalent to "Create Table"
+    statements in raw SQL.
+    """
+    Base.metadata.create_all(engine)

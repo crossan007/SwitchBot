@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>SwitchBot Setup</title>
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="static/javascript.js"></script>
+    <style>
+        .btn-primary {
+        color: #fff;
+        background-color: #FF0000;
+        border-color: #2e6da4;
+        }
+        .btn-primary.active {
+            color: #FFF;
+            background-color: #00FF00;
+            border-color: #204d74;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li class="active" ><a data-toggle="pill" href="#Login">Configure Login</a></li>
+                    <li ><a data-toggle="pill" href="#AddComponents">Add Components</a></li>
+                    <li ><a data-toggle="pill" href="#Save">Save Settings</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">SwitchBot First Time Setup Wizard</h3>
+        </div>
+ 
+        <div class="tab-content">
+            <div id="Login" class="tab-pane fade in active">
+               <h3>Configure Login</h3>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="username" class="form-control" id="username" placeholder="Administrator">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+               <p><a class="btn btn-lg btn-success" data-toggle="pill" data-target="#AddComponents" role="button">Next ></a></p>
+            </div>
+           
+            <div id="AddComponents" class="tab-pane fade">
+                <h3>Add Components</h3>
+                <p><a class="btn btn-lg btn-success" data-toggle="pill" data-target="#Save" role="button">Next ></a></p>
+            </div>
+            <div id="Save" class="tab-pane fade">
+                <h3>Save Settings</h3>
+                <p><a class="btn btn-lg btn-success finishSetup" href="#" id="speaker" role="button">Finish</a></p>
+            </div>
+        </div>
+        <hr>
+        <footer class="footer">
+            <p>This open source software availabile  on <a href="https://github.com/crossan007/SwitchBot">GitHub</a></p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

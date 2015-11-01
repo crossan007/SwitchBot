@@ -111,6 +111,16 @@ def initializePlugins():
 def main():
     return render_template('index.html',ControlObjects=ControlObjects)
 
+@app.route('/welcome')
+def welcome():
+     return render_template('welcome.html')
+
+@app.route('/api/finishSetup',methods=['POST'])
+def finishSetup():
+    username=request.form['username']
+    password=request.form['password']
+    return "/"
+
 @app.route('/api/presets/setactivepreset',methods=['POST'])
 def setActivePreset():
     presetName = request.form['presetName']
@@ -126,7 +136,8 @@ def control():
     controlProperties = request.form['controlProperties']
     return "Setting Control: %s " % controlObject
     
-print (type(db.engine))
+print (type(db.getEngine()))
+
 initializePlugins()
     
 if __name__ == "__main__":
