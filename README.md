@@ -7,7 +7,12 @@ SwitchBot uses a modular approach for defining each control device.  Each device
 ##Presets
 What control system would be complete without presets?  User-programmable presets allow you to easily change your entire collection of control devices with a single click!
 ![SwitchBot Preset Menu](/screenshots/Presets.png?raw=true "SwitchBot Preset Menu")
+##Easy Set-Up
+A wizard driven setup that walks you through adding all of your controallabe devices into SwitchBot's grasp
+![SwitchBot Wizard Setup](/screenshots/Welcome-1.png?raw=true "SwitchBot Wizard Setup")
 ##Devices
+The heart and soul of SwitchBot is actually controlling devices.  
+![SwitchBot Component View](/screenshots/Components.png?raw=true "SwitchBot Component View")
 SwitchBot is currently capable of controlling the following devices.
 ###Power Switches
 *[Digital Loggers Inc, Web Power Switch 7](http://www.digital-loggers.com/lpc.html)
