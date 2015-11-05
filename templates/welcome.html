@@ -52,13 +52,19 @@
                 <h3>Add Components</h3>
                 <ul>
                 {% for controllableObject in controllableObjects %}
-                    <li>{{controllableObject.name}}
-                        <ul>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{controllableObject.name}}
+                    </div>
+                    <div class="panel-body">
                         {% for requirement in controllableObject.requirements %}
-                            <li>{{requirement.name}}</li>
+                            <input type="text" label="{{requirement.name}}" placeholder="{{requirement.name}}" />
                         {% endfor %}
-                        </ul>
-                    </li>
+                    </div>
+                    <div class="panel-footer">     
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    </div>
+                </div>
                 {% endfor %}
                 </ul>
                 <p><a class="btn btn-lg btn-success" data-toggle="pill" data-target="#Save" role="button">Next ></a></p>
@@ -70,7 +76,7 @@
         </div>
         <hr>
         <footer class="footer">
-            <p>This open source software availabile  on <a href="https://github.com/crossan007/SwitchBot">GitHub</a></p>
+            <p>This open source software available  on <a href="https://github.com/crossan007/SwitchBot">GitHub</a></p>
         </footer>
  
     </div>
