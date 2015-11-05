@@ -4,11 +4,20 @@ def run(self):
     print("Hello from the projector plugin!")
     self.GetProjector.visible='yes'
     
+def getName():
+    return "Projector"
+    
+    
 def getControlObjectClassGUID():
     return "f6dfc3cb-1456-4e1c-8766-97c9a3275741"
 
 def getControlObjectProperties():
     return "Some video inputs"
+
+def getInstantiationRequirements():
+    reqs=[{"name" : "IP Address","type":"text"}]
+    return reqs    
+    
     
 def GetProjector(IP,command):
     """

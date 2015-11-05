@@ -5,6 +5,7 @@ import imp
 import os
 import ssl
 import db
+import copy
 
 app = Flask(__name__)
 
@@ -79,6 +80,7 @@ ControlObjects = [
 #Load plugins per https://lkubuntu.wordpress.com/2012/10/02/writing-a-python-plugin-api/
 PluginFolder = "./plugins"
 MainModule = "__init__"
+loadedPlugins = []
 
 def getPlugins():
     plugins = []
@@ -95,7 +97,7 @@ def loadPlugin(plugin):
     return imp.load_module(MainModule, *plugin["info"])
     
 def initializePlugins():
-    for i in getPlugins():
+    for i in loadedPlugins:
         print("Loading plugin " + i["name"])
         plugin = loadPlugin(i)
         plugin.run(plugin)
@@ -113,7 +115,14 @@ def main():
 
 @app.route('/welcome')
 def welcome():
-     return render_template('welcome.html')
+    controllableObjects = []
+    print(loadedPlugins)
+    print ("Plugins loaded: ",loadedPlugins.__len__())
+    for i in loadedPlugins:
+        plugin = loadPlugin(i)
+        controllableObjects.append({"name":plugin.getName(),"requirements":plugin.getInstantiationRequirements()})
+        print(controllableObjects)   
+    return render_template('welcome.html',controllableObjects=controllableObjects)
 
 @app.route('/api/finishSetup',methods=['POST'])
 def finishSetup():
@@ -138,7 +147,7 @@ def control():
     
 print (type(db.getEngine()))
 
-initializePlugins()
+loadedPlugins = getPlugins()
     
 if __name__ == "__main__":
     context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)

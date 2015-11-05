@@ -6,13 +6,18 @@ import re
 def run(self):
     print("Hello from the Web Power Switch Plugin!")
 
-    
+def getName():
+    return "Web Power Switch"
     
 def getControlObjectClassGUID():
     return "60744a91-2ef8-4fa1-84a0-bc51bb5f9287"
 
 def getControlObjectProperties():
     return "Some outlets"
+
+def getInstantiationRequirements():
+    reqs=[{"name" : "IP Address","type":"text"},{"name":"Username","type":"text"},{"name":"Password","type":"password"}]
+    return reqs
     
 def getControlPage(IP,username,password):
     """
@@ -31,4 +36,4 @@ def getOutlets():
 
 
 def getSetupPage(IP,username,password):
-
+    return " "

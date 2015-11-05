@@ -50,6 +50,17 @@
            
             <div id="AddComponents" class="tab-pane fade">
                 <h3>Add Components</h3>
+                <ul>
+                {% for controllableObject in controllableObjects %}
+                    <li>{{controllableObject.name}}
+                        <ul>
+                        {% for requirement in controllableObject.requirements %}
+                            <li>{{requirement.name}}</li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+                </ul>
                 <p><a class="btn btn-lg btn-success" data-toggle="pill" data-target="#Save" role="button">Next ></a></p>
             </div>
             <div id="Save" class="tab-pane fade">
