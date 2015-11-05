@@ -10,6 +10,7 @@ What control system would be complete without presets?  User-programmable preset
 ##Easy Set-Up
 A wizard driven setup that walks you through adding all of your controallabe devices into SwitchBot's grasp
 ![SwitchBot Wizard Setup](/screenshots/Welcome-1.png?raw=true "SwitchBot Wizard Setup")
+![SwitchBot Component Setup](/screenshots/Welcome-2.png?raw=true "SwitchBot Component Setup")
 ##Devices
 The heart and soul of SwitchBot is actually controlling devices.  
 ![SwitchBot Component View](/screenshots/Components.png?raw=true "SwitchBot Component View")
