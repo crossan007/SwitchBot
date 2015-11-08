@@ -55,4 +55,31 @@ $(function() {
         this.blur();
     });
     
+    $('.inputBox').change(function() {
+        var timer;
+        var _this=this;
+        var targetID='#'+$(_this).data('controlid')+'Status';
+        window.clearTimeout(window.timer);
+        window.timer=window.setTimeout(function(){
+            $.ajax({
+            url: '/api/setComponentConfig',
+            data: {"test":"good"},
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+                $(targetID).attr("class","glyphicon glyphicon-ok");
+                $(targetID).css("color","green");
+            },
+            error: function(error) {
+                console.log(error);
+                $(targetID).attr("class","glyphicon glyphicon-remove");
+                $(targetID).css("color","red");
+            }
+        });
+
+        },1000);
+    
+    });
+    
+    
 });

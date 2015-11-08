@@ -112,6 +112,10 @@ def initializePlugins():
 @app.route('/')
 def main():
     return render_template('index.html',ControlObjects=ControlObjects)
+    
+@app.route('/api/setComponentConfig',methods=['POST'])
+def setComponentConfig():
+    return "OK"
 
 @app.route('/welcome')
 def welcome():
@@ -120,7 +124,7 @@ def welcome():
     print ("Plugins loaded: ",loadedPlugins.__len__())
     for i in loadedPlugins:
         plugin = loadPlugin(i)
-        controllableObjects.append({"name":plugin.getName(),"requirements":plugin.getInstantiationRequirements()})
+        controllableObjects.append({"name":plugin.getName(),"guid":plugin.getControlObjectClassGUID(),"requirements":plugin.getInstantiationRequirements()})
         print(controllableObjects)   
     return render_template('welcome.html',controllableObjects=controllableObjects)
 
