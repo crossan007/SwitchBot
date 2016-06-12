@@ -1,0 +1,87 @@
+body{
+	background-color: #7a7e81;
+}
+#title{
+	width: 100%;
+	color:#FFFFFF;
+}
+#title h1{
+	text-align: center;
+	font-size: 16pt;
+}
+
+.ClearFloat{
+clear:both;
+}
+.controlColumn{
+	width:30%;
+	border: 1px solid black;
+	margin-left: 5px;
+	margin-right: 5px;
+	float:left;
+	text-align:center;
+
+}
+.controlZone{
+	height:auto;
+	width:95%;
+	border: 1px dotted black;
+	margin: 5px;
+	overflow:hidden;
+	text-align:center;
+	padding:0px;
+}
+
+.controlzone a{
+	font-size:16pt;
+
+}
+
+.subcontrolZone{
+	height:100px;
+	width:100px;
+	border: 1px dotted black;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	overflow:hidden;
+	text-align:center;
+}
+
+input, select {
+width:95%;
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+
+
+.controlZone h2, .subcontrolzone h2
+{
+font-size:12pt;
+float:left;
+color:white;
+text-align:center;
+}
+.controlZone a img, .subcontrolzone a img
+{
+font-size:inherit;
+float:inherit;
+color:inherit;
+}
+
+.button
+{
+	width:80%;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.icon{
+float:right;
+height:40px;
+width:40px;
+}

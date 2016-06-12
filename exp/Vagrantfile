@@ -1,0 +1,42 @@
+
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  # We define what kind of a box we want. In this example it will be Ubuntu Lucid 32bit
+  config.vm.box = "lucid32"
+  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+
+  # You can sync your working directory with vagrant folder
+  # config.vm.synced_folder "../data", "/vagrant_data"
+  # Now we need to forward the relevant ports. So that we could access the services running inside the vagrant box with http://127.0.0.1:PORT
+
+  # Port Forwarding guest -> Port on your vagrant maschine, host -> Port that you can access as localhost:port
+  # Forward MongoDB port
+  config.vm.network :forwarded_port, guest: 27017, host: 50004
+  # Forward Elastic Search Port
+  config.vm.network :forwarded_port, guest: 9200, host: 9200
+
+  # Modify your box a bit. In our case we set the Memory limit to 512mb
+  config.vm.provider :virtualbox do |vb|
+    vb.customize [
+      "modifyvm", :id,
+      "--memory", "512"
+    ]
+  end
+
+  # We can also define some shell scripts that will be executed on provisioning.
+ config.vm.provision :shell,
+    :path => "vagrant/shell/setup.sh"
+
+  # Now comes the fun part
+  # Vagrant Uses Puppet to setup the software needed on the server, for example (Mongodb, Elasticsearch)
+  # To learn more about Puppet configuration see this link: http://docs.vagrantup.com/v2/provisioning/puppet_apply.html
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "vagrant/puppet"
+    puppet.manifest_file  = "main.pp"
+    puppet.options        = [
+                              '--verbose'
+                            ]
+  end
+end

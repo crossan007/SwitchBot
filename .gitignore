@@ -1,1 +1,4 @@
-configfile.php
+/nbproject/private/
+/src/nbproject/private
+vendor
+.vagrant

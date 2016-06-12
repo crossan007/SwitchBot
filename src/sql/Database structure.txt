@@ -1,0 +1,34 @@
+Table:ControlDeviceTypes
++ControlDeviceTypeGUID
++DeviceTypeName ("Panasonic RS-232 Projector", "DLC WebPowerSwitch")
++DeviceType (Projector,WebPowerSwitch,LightingController,SerialBridge)
+
+
+ControlDeviceTypePropertyKeys
++ControlDevicePropertyKeyGUID
++[FK]ControlDeviceTypeGUID
++PropertyKeyName (DeviceManufacturer,DeviceSerialNumber,DeviceAddress,Outlet)
+
+ControlDeviceTypePropertyValues
++ControlDevicePropertyValueGUID
++[FK]ControlDevicePropertyKeyGUID
++PropertyValueName (OutletNumber,OutletName,OutletState)
+
+
+ControlDeviceTypeMethods
++ControlDeviceMethodGUID
++[FK]ControlDeviceTypeGUID
++MethodName (DeviceManufacturer,DeviceSerialNumber,DeviceAddress)
++Method
+
+
+
+ControlDevices
++DeviceName
++[FK]ControlDeviceType
+
+
+
+
+ControlDeviceProperties
+ControlDevice

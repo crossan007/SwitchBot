@@ -1,0 +1,10 @@
+{
+  "name": "crossan007/SwitchBot",
+  "version": "1.0.0",
+  "type": "project",
+  "require": {
+    "slim/slim": "2.6.2",
+     "components/jquery": "1.11.*",
+     "twbs/bootstrap":"3.3.6"
+  }
+}
